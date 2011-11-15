@@ -13,6 +13,7 @@ public final class Segment3 extends Segment {
 	 * Creates a new line segment between two points.
 	 * @param p1 the starting point of the segment
 	 * @param p2 the end point of the segment
+	 * @throws IllegalArgumentException if the points are too close to each other
 	 */
 	public Segment3(Vector3 p1, Vector3 p2) {
 		super(p1, p2);

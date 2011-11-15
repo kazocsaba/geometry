@@ -1,6 +1,5 @@
 package hu.kazocsaba.math.geometry;
 
-import hu.kazocsaba.math.matrix.Vector;
 import hu.kazocsaba.math.matrix.Vector2;
 import hu.kazocsaba.math.matrix.immutable.ImmutableVector2;
 
@@ -14,6 +13,7 @@ public final class Segment2 extends Segment {
 	 * Creates a new line segment between two points.
 	 * @param p1 the starting point of the segment
 	 * @param p2 the end point of the segment
+	 * @throws IllegalArgumentException if the points are too close to each other
 	 */
 	public Segment2(Vector2 p1, Vector2 p2) {
 		super(p1, p2);
