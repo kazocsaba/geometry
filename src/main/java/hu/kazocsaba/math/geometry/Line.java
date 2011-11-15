@@ -12,7 +12,7 @@ import hu.kazocsaba.math.matrix.immutable.ImmutableVector;
  * @author Kazó Csaba
  */
 public class Line {
-	private static final double EPS=1e-8;
+	protected static final double EPS=1e-8;
 	
 	private final ImmutableVector point;
 	private final ImmutableVector dir;
@@ -58,10 +58,15 @@ public class Line {
 	 * @param value the value of the coordinate
 	 * @return the requested point of this line
 	 * @throws IllegalArgumentException if the index is invalid
+	 * @throws DegenerateCaseException when this line is parallel with the
+	 * {@code <coord> = value} plane
 	 */
 	public Vector getPointWhereCoord(int coord, double value) {
 		if (coord<0 || coord>=getPoint().getDimension()) throw new IllegalArgumentException();
 		Vector v=MatrixFactory.createLike(getPoint());
+		
+		if (Math.abs(getDir().getCoord(coord))<EPS)
+			throw new DegenerateCaseException("No such point");
 		
 		double t=(value-getPoint().getCoord(coord))/getDir().getCoord(coord);
 		for (int i=0; i<v.getDimension(); i++)

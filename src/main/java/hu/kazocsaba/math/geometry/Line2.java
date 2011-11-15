@@ -77,8 +77,10 @@ public class Line2 extends Line {
 	 * Returns the y coordinate of the point which lies on this line and has the specified x coordinate.
 	 * @param x the x coordinate
 	 * @return the corresponding y coordinate
+	 * @throws DegenerateCaseException when this line is parallel to the y axis
 	 */
 	public double getYforX(double x) {
+		if (Math.abs(getDir().getX())<EPS) throw new DegenerateCaseException("Line is parallel to the y axis");
 		return getPoint().getY()+getDir().getY()/getDir().getX()*(x-getPoint().getX());
 	}
 	
@@ -86,8 +88,10 @@ public class Line2 extends Line {
 	 * Returns the x coordinate of the point which lies on this line and has the specified y coordinate.
 	 * @param y the y coordinate
 	 * @return the corresponding x coordinate
+	 * @throws DegenerateCaseException when this line is parallel to the x axis
 	 */
 	public double getXforY(double y) {
+		if (Math.abs(getDir().getY())<EPS) throw new DegenerateCaseException("Line is parallel to the x axis");
 		return getPoint().getX()+getDir().getX()/getDir().getY()*(y-getPoint().getY());
 	}
 }
