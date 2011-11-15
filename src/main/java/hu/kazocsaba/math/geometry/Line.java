@@ -79,7 +79,7 @@ public class Line {
 	 * the expression
 	 * <blockquote>{@code p.minus(getPoint()).dot(getUnitDir())/getDir().norm()}.</blockquote>
 	 * @param p an arbitrary point
-	 * @return the parameter value {@code t} for which {@link getPointAt(t)} is the point of this line closest to {@code p}.
+	 * @return the parameter value {@code t} for which {@link #getPointAt(double) getPointAt(t)} is the point of this line closest to {@code p}.
 	 */
 	public double getClosestT(Vector p) {
 		return p.minus(getPoint()).dot(getUnitDir())/getDir().norm();

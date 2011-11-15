@@ -3,7 +3,7 @@ package hu.kazocsaba.math.geometry;
 /**
  * Thrown when no solution could be returned due to special circumstances. There may be no
  * solutions or infinite solutions.
- * For example, {@link Plane3.intersect(Line3)} throws this exception when
+ * For example, {@link Plane3#intersect(Line3)} throws this exception when
  * the line is parallel with the plane.
  * @author Kazó Csaba
  */
