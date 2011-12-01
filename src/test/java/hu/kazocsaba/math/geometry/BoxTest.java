@@ -27,4 +27,10 @@ public class BoxTest {
 		assertNotNull(isection);
 		assertTrue((isection.getP1().error(box.getTopLeft())<EPS && isection.getP2().error(box.getTopRight())<EPS) || ((isection.getP2().error(box.getTopLeft())<EPS && isection.getP1().error(box.getTopRight())<EPS)));
 	}
+	
+	@Test
+	public void testToStringWorks() {
+		Box2 box=new Box2(MatrixFactory.createVector(0, 0), 1, 1);
+		assertNotNull(box.toString());
+	}
 }

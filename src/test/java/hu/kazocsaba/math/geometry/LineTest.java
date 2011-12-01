@@ -44,4 +44,10 @@ public class LineTest {
 		assertEquals(0, l2.distance(l2), 1e-8);
 		assertEquals(0, l3.distance(l3), 1e-8);
 	}
+	
+	@Test
+	public void testToStringWorks() {
+		assertNotNull(Line3.createFromDir(MatrixFactory.createVector(1, 1, 1), MatrixFactory.createVector(2, 0, 0)).toString());
+		
+	}
 }

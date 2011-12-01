@@ -122,4 +122,10 @@ public class Line {
 		
 		return dp.plus(d1.times(t1)).minus(d2.times(t2)).norm();
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Line[%s, dir=%s]",getPoint(), getDir());
+	}
+	
 }

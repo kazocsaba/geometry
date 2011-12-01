@@ -43,4 +43,10 @@ public class Segment {
 	public Vector getPointAt(double t) {
 		return p1.plus(dir.times(t));
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Segment[%s - %s]", p1, p2);
+	}
+	
 }

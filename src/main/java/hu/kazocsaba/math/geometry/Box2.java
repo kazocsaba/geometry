@@ -158,5 +158,10 @@ public final class Box2 {
 			return null;
 		}
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Box[%s -> %s]", getBottomLeft(), getTopRight());
+	}
 	
 }

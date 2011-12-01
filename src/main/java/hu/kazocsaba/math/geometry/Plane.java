@@ -46,4 +46,10 @@ public class Plane {
 	public double distance(Vector p) {
 		return Math.abs(unitNormal.dot(point.minus(p)));
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Plane[%s, n=%s]",getPoint(), getNormal());
+	}
+	
 }
