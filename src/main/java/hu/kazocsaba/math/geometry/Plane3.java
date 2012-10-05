@@ -40,8 +40,7 @@ public class Plane3 extends Plane {
 	}
 	
 	/**
-	 * Returns the intersection of this plane and a line. If the line and this plane are parallel, {@code null} is
-	 * returned.
+	 * Returns the intersection of this plane and a line.
 	 * @param line the line to intersect with
 	 * @return the intersection point
 	 * @throws DegenerateCaseException when this plane and the line are parallel
