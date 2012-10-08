@@ -34,7 +34,7 @@ Features
 **Plane** in 3D space
 
 - distance of point from plane
-- intersection with line
+- intersection with line and plane
 
 **Segment** in 2D and 3D
 
@@ -43,5 +43,7 @@ Features
 **Box** in 2D
 
 - intersection with line (returns a segment)
+
+**Circle** in 3D
 
 Additional features are added as needed.
