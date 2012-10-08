@@ -52,4 +52,22 @@ public class Plane3 extends Plane {
 		return line.getPointAt(t);
 	}
 	
+	/**
+	 * Returns the intersection of this plane and the argument.
+	 * @param plane the plane to intersect with
+	 * @return the intersection line
+	 * @throws DegenerateCaseException when the planes are parallel
+	 */
+	public Line3 intersect(Plane3 plane) {
+		Vector3 normalCross=getUnitNormal().cross(plane.getUnitNormal());
+		if (normalCross.norm()<EPS) throw new DegenerateCaseException("Planes are parallel");
+		double normalDot=getUnitNormal().dot(plane.getUnitNormal());
+		double h1=getUnitNormal().dot(getPoint());
+		double h2=plane.getUnitNormal().dot(plane.getPoint());
+		
+		double denom=1-normalDot*normalDot;
+		double c1=(h1-h2*normalDot)/denom;
+		double c2=(h2-h1*normalDot)/denom;
+		return Line3.createFromDir(getUnitNormal().times(c1).plus(plane.getUnitNormal().times(c2)), normalCross);
+	}
 }
